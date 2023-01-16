@@ -56,12 +56,14 @@ height: 67px;
 display: flex;
 justify-content: center;
 gap:5px ;
+width:500px;
+margin: auto;
 }
 
 #userInput {
 display: flex;
-width: 341px;
-height: 36px;
+width: 70%;
+height: 50px;
 border-radius: 9px;
 border: 1px solid rgba(2, 1, 102, 0.5);
 
@@ -71,60 +73,75 @@ border: 1px solid rgba(2, 1, 102, 0.5);
 display: flex;
 justify-content: center;
 align-items: center;
-width: 87px;
-height: 36px;
+width: 25%;
+height: 50px;
 border-radius: 9px;
 background-color: rgba(55, 50, 153, 1);
 color: rgba(247, 247, 249, 1);
 }
 
 .childDiv {
-display: flex;
-align-items: center;
-justify-content: center;
+display: grid;
+grid-template-columns: 1fr 80% ;
+grid-template-rows: 10% 80% 10%;
 box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.15);
-width: 267px;
-height: 237px;
+width: 330px;
+height: 330px;
 background-color:#F7F7F9;
 border-radius: 9px;
 }
 
 .childImgPlace {
-    position: relative;
-    left: 50px;
-    width: 60%;
-    height: 60%;
+    grid-area: 2/1/2/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    height: 100%;
+    padding: 8%;
+
 }
 
 .childNamePlace {
-    position: relative;
+   display: flex;
+   justify-content: center;
     font-weight: 400;
     font-size: 22px;
-    right: 80px;   
-    top: 90px;
+    grid-area: 3/1/3/3;
     color: rgba(55, 50, 153, 1);
 }
 
 .childNumberPlace {
-    position: relative;
+    grid-area: 1/1/1/1;
     font-size: 22px;
     font-weight: 400;
-    bottom: 100px;
     right: 214px;
     color: rgba(55, 50, 153, 1);
 }
 
+#contBig12Parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:30px;
+    /* min-width: 1200px; */
+    /* max-width: 1200px; */
+    /* width: 100%;
+    height: 100%; */
+}
+
 #big12Parent {
-display: flex;
-flex-wrap: wrap;
+/* display: grid;
+grid-template-rows: 1fr 1fr 1fr;
+grid-template-columns: 1fr 1fr 1fr 1fr; */
+gap: 25px;
 justify-content: center;
 align-items: center;
-width: 100%;
-margin-top:30px;
-background-color: #E5E5E5;
-gap:13px;
-padding: 10px;
-margin-left: 13px;
+/* min-width: 1200px; */
+max-width: 1400px;
+height: 100%;
+display: flex;
+flex-wrap: wrap;
 }
 
 #fotter {
@@ -152,13 +169,17 @@ margin-top: 50px;
  #modalParent {
 
         position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
+        z-index: 4; /* Sit on top */
         left: 0;
         top: 0;
         width: 100%; /* Full width */
         height: 100%; /* Full height */
         overflow: auto; /* Enable scroll if needed */
-        background-color: #E5E5E5;
+        background-color: #ccc8c8;
+        /* opacity: 80%; */
+        display: grid;
+        /* grid-template-columns:  */
+
       }
  
  
@@ -166,8 +187,8 @@ margin-top: 50px;
 
  #closeBtn {
     position: absolute;
-    top: 150px;
-    left: 50px;
+    top: 25%;
+    left: 5%;
     color:rgba(2, 1, 102, 1);
     font-size: 18px;
     font-weight: bold;
@@ -181,8 +202,8 @@ margin-top: 50px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 844px;
-    height: 342px;
+    width: 70%;
+    height: 40%;
     background-color: #F7F7F9;
     z-index: 3;
     border-radius: 9px;
@@ -208,18 +229,22 @@ flex-direction: column;
 justify-content: center;
 width: 60%;
 height: 100%;
+gap: 30px;
+margin-bottom: 20px;
 }
 
 #modalDesc {
 display: flex;
 flex-direction: column;
+justify-content: center;
 width: 100%;
 height: 45%;
+max-width: 700px;
 }
 #modalDescHeader {
 display: flex;
 height: 26px;
-width: 177px;
+width: 50%;
 font-size: 22px;
 color: rgba(55, 50, 153, 1);
 
@@ -227,7 +252,7 @@ color: rgba(55, 50, 153, 1);
 #modalDescInfo {
 display: flex;
 height: 67px;
-width: 349px;
+width: 90%;
 margin-top: 10px;
 color: rgba(2, 1, 102, 1);
 }
@@ -237,6 +262,7 @@ flex-direction: column;
 justify-content: flex-start;
 width: 100%;
 height: 45%;
+max-width: 700px;
 }
 #modalStatsHeader {
 display: flex;
@@ -252,9 +278,10 @@ color: rgba(55, 50, 153, 1);
 display: flex;
 flex-direction: column;
 flex-wrap: wrap;
-width:70%;
-height: 67px;
+/* width:70%; */
+height: 40%;
 margin-top: 10px;
+gap: 4px;
 }
 
 .newLi {
@@ -269,14 +296,14 @@ line-height: 21px;
 
 .modalChildDiv {
     display: flex;
-    flex-direction:row;
+    flex-direction:column;
     /* position: relative;
     left: 60px;
     top: 15px; */
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
-    width: 267px;
-    height: 237px;
+    height: 50%;
+    width: 50%;
 }
 
 .newType {
@@ -295,16 +322,18 @@ line-height: 21px;
 .modalchildNumberPlace {
     display: flex;
     position: relative;
-    bottom: 110px;
-    right: 260px;
+    right: 5%;
+    order: -1;
+    /* bottom: 110px;
+    right: 260px; */
 
 }
 
 #modalLinkToFav {
 position: relative;
 display: flex;
-left: 460px;
-top: 15px;
+left: 90%;
+top: 2%;
 height: 18.332429885864258px;
 width: 20px;
 border-radius: 0px;
@@ -317,7 +346,14 @@ border-color: rgba(2, 1, 102, 1);
     position: relative;
 }
 
-@media (max-width:400px) {
+@media (max-width:700px) {
+    #modalLikeImg {
+        bottom: 1900%;
+    }
+    #closeBtn {
+        top: 10%;
+        right: 2%;
+    }
     #headerBtns {
         display: none;
     }
@@ -332,16 +368,28 @@ border-color: rgba(2, 1, 102, 1);
 #searchParent {
    
     justify-content: center;
-    width: 60%;
-    margin-left: 70px;
+    width: 300px;
+    margin: auto;
+    /* margin-left: 70px; */
+}
+
+#big12Parent {
+    /* flex-direction: column;
+    width: 50%; */
+}
+
+#contBig12Parent {
+    display: flex;
+    flex-direction: column;
 }
 
 #modalBody {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 285px;
-    height: 762px;
+    width: 50%;
+    height: 70%;
+    min-width: 300px;
 }
 .modalChildDiv {
 
@@ -357,11 +405,12 @@ border-color: rgba(2, 1, 102, 1);
 }
 
 #modalStats {
-width: 282px;
+/* width: 282px; */
 height: 185px;
 justify-content: center;
 align-items: center;
 margin-top: 30px;
+margin-bottom: 40px;
     }
 
     #modalDesc {
@@ -390,11 +439,13 @@ margin-top: 30px;
         justify-content: center;
     }
     .modalchildNumberPlace {
-        bottom: 135px;
-        right: 225px;
+        /* bottom: 135px;
+        right: 225px; */
     }
     .modalChildDiv {
-        margin-left: 30px;
+        /* margin-left: 30px; */
+        width: 60%;
+        height: 60%;
     }
 }
 
